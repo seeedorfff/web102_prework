@@ -11,13 +11,15 @@ body {
 
 .header {
   display: flex;
+  justify-content: space-between; 
+  align-items: center;
   background-color: lightblue;
   padding: 1%;
-  align-items: center;
   margin-left: -10px;
   margin-right: -10px;
   margin-top: -10px;
 }
+
 
 .stats-container {
   display: flex;
@@ -80,4 +82,103 @@ button {
   padding: 1%;
   margin: 1%;
   border-radius: 7px;
+}
+
+#theme-toggle {
+  margin-left: auto; /* Ensures it is pushed to the far right */
+}
+
+
+/* Responsive Design for Tablets (screens <= 768px) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack header items vertically */
+    text-align: center;
+  }
+
+  .stats-container {
+    flex-wrap: wrap; /* Wrap stats cards */
+    justify-content: center; /* Center them */
+  }
+
+  .stats-card {
+    width: 45%; /* Adjust the size of cards */
+    margin: 10px;
+  }
+
+  #games-container {
+    justify-content: center; /* Center game cards */
+  }
+
+  .game-card {
+    width: 80%; /* Reduce card size on tablets */
+  }
+}
+
+/* Responsive Design for Mobile Devices (screens <= 480px) */
+@media (max-width: 480px) {
+  #tentacles {
+    width: 30px; /* Smaller logo */
+  }
+
+  .stats-card {
+    width: 90%; /* Full-width stats cards */
+    font-size: 16px; /* Adjust text size */
+  }
+
+  .game-card {
+    width: 100%; /* Full-width game cards */
+  }
+
+  button {
+    font-size: 14px; /* Smaller button text */
+    padding: 5px; /* Adjust button padding */
+  }
+}
+
+/* Light Theme (Default) */
+body.light-theme {
+  background-color: #758190;
+  color: #000000;
+}
+
+.header.light-theme {
+  background-color: lightblue;
+}
+
+.stats-card.light-theme {
+  background-color: #a8b0bc;
+}
+
+.game-card.light-theme {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #ffffff;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: #2c2f33;
+  color: #ffffff;
+}
+
+.header.dark-theme {
+  background-color: #23272a;
+}
+
+.stats-card.dark-theme {
+  background-color: #4f545c;
+}
+
+.game-card.dark-theme {
+  background-color: #4f545c;
+  box-shadow: 0 0 10px #23272a;
+}
+
+button.dark-theme {
+  background-color: #7289da;
+  color: white;
+}
+
+button:hover.dark-theme {
+  background-color: #5b6eae;
 }

@@ -211,3 +211,24 @@ secondGameContainer.appendChild(secondGameElement);
 // names of the first and second most funded games.
 console.log("Most funded game:", mostFundedGame.name);
 console.log("Second most funded game:", secondMostFundedGame.name);
+
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Check for saved theme in localStorage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  body.classList.add(savedTheme);
+}
+
+// Toggle theme on button click
+themeToggle.addEventListener('click', () => {
+  if (body.classList.contains('dark-theme')) {
+    body.classList.replace('dark-theme', 'light-theme');
+    localStorage.setItem('theme', 'light-theme');
+  } else {
+    body.classList.replace('light-theme', 'dark-theme');
+    body.classList.add('dark-theme');
+    localStorage.setItem('theme', 'dark-theme');
+  }
+});
