@@ -25,7 +25,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='https://drive.google.com/file/d/1Fo6e2qsu_jyE91gsTmRlM5J4AycIMwXZ/view?usp=sharing title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://drive.google.com/file/d/1Fo6e2qsu_jyE91gsTmRlM5J4AycIMwXZ/view?usp=sharing' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Camtasia  
