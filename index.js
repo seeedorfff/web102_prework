@@ -150,12 +150,34 @@ allBtn.addEventListener("click", showAllGames);
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
+// using filter
+const unfundedGames = GAMES_JSON.filter((game) => game.pledged < game.goal);
 
+const numUnfundedGames = unfundedGames.length;
+
+console.log(numUnfundedGames);
+
+// using reduce
+/*
+const numUnfundedGames = GAMES_JSON.reduce((count, game) => {
+    return game.pledged , game.goal ? count + 1 : count; // ternary operator
+    }, 0); 
+*/
 
 // create a string that explains the number of unfunded games using the ternary operator
-
+const displayStr = `
+    A total of $${totalRaised.toLocaleString()} has been raised for ${totalGames} games.
+    Currently, ${numUnfundedGames} game${numUnfundedGames === 1 ? '' : 's'} remain${numUnfundedGames === 1 ? '' : 's'} unfunded.
+    We need your help to fund these amazing games!
+`;
 
 // create a new DOM element containing the template string and append it to the description container
+const paragraph = document.createElement("p");
+
+paragraph.innerHTML = displayStr; // this sets innerHTML of paragraph to displayStr
+
+// append the new paragraph to the description container
+descriptionContainer.appendChild(paragraph);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
@@ -170,7 +192,22 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+const [mostFundedGame, secondMostFundedGame] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+const firstGameElement = document.createElement("p");
+
+firstGameElement.textContent = mostFundedGame.name;
+
+firstGameContainer.appendChild(firstGameElement);
 
 // do the same for the runner up item
+const secondGameElement = document.createElement("p");
+
+secondGameElement.textContent = secondMostFundedGame.name;
+
+secondGameContainer.appendChild(secondGameElement);
+
+// names of the first and second most funded games.
+console.log("Most funded game:", mostFundedGame.name);
+console.log("Second most funded game:", secondMostFundedGame.name);
